@@ -6,6 +6,8 @@
 @Email   : 
 @Software: PyCharm
 """
+import json
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -37,6 +39,7 @@ def get_cloud_ip_info(*search_keys):
         'cache-control': "no-cache"
     }
 
+    cloud_ip_dict = {}
     for search_key in search_keys:
         params = {
             "search[search]": search_key,
@@ -53,13 +56,18 @@ def get_cloud_ip_info(*search_keys):
                 continue
 
             td_result = tr_result.select("td")[1]
-            # company = td_result.text.strip()
+            company = td_result.text.strip()
             # country = td_result.select("img")[0]["title"]
 
             # 转换
             ip_list = transform_cloud_ip(ip_str)
 
-            print(ip_list)
+            if cloud_ip_dict.__contains__(company):
+                cloud_ip_dict[company].extend(ip_list)
+            else:
+                cloud_ip_dict[company] = ip_list
+
+    return cloud_ip_dict
 
 
 def ip_bit_cala(ip_x, mask):
@@ -120,4 +128,6 @@ def transform_cloud_ip(ip_str):
 
 
 if __name__ == "__main__":
-    get_cloud_ip_info("Aliyun", '"Tencent cloud"', '"Huawei Public Cloud"')
+    with open("cloud_ip.json", "w") as fo:
+        cloud_ip_dict = get_cloud_ip_info("Aliyun", '"Tencent cloud"', '"Huawei Public Cloud"')
+        json.dump(cloud_ip_dict, fo, ensure_ascii=False)
