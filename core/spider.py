@@ -20,23 +20,23 @@ def get_cloud_ip_info(*search_keys):
     """
     url = "https://bgp.he.net/search"
     headers = {
-        'Connection': "keep-alive",
-        'Cache-Control': "max-age=0",
-        'DNT': "1",
-        'Upgrade-Insecure-Requests': "1",
-        'User-Agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36",
-        'Sec-Fetch-Mode': "navigate",
-        'Sec-Fetch-User': "?1",
-        'Accept': "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3",
-        'Sec-Fetch-Site': "same-origin",
-        'Referer': "https://bgp.he.net/cc",
-        'Accept-Encoding': "gzip, deflate, br",
-        'Accept-Language': "zh-CN,zh;q=0.9",
-        'Cookie': "__utma=83743493.875054967.1571191220.1571191220.1571191220.1; __utmc=83743493; __utmz=83743493.1571191220.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); c=BAgiEzIxMC44My4yNDAuMTc4--35a94759c90411c56d1cb4d2ccc7635406aad645; _bgp_session=BAh7BjoPc2Vzc2lvbl9pZEkiJTQyMDc5NmEwMjEzMjYxMTgwYWFkY2IzZTY2N2Q3MWE2BjoGRUY%3D--a1439e2764d2221213a863c3951e693c6bc75b55,__utma=83743493.875054967.1571191220.1571191220.1571191220.1; __utmc=83743493; __utmz=83743493.1571191220.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); c=BAgiEzIxMC44My4yNDAuMTc4--35a94759c90411c56d1cb4d2ccc7635406aad645; _bgp_session=BAh7BjoPc2Vzc2lvbl9pZEkiJTQyMDc5NmEwMjEzMjYxMTgwYWFkY2IzZTY2N2Q3MWE2BjoGRUY%3D--a1439e2764d2221213a863c3951e693c6bc75b55; _bgp_session=BAh7BjoPc2Vzc2lvbl9pZEkiJTQyMDc5NmEwMjEzMjYxMTgwYWFkY2IzZTY2N2Q3MWE2BjoGRUY%3D--a1439e2764d2221213a863c3951e693c6bc75b55",
-        'If-None-Match': "d2a3cd416366cb5595c8c436a73af375",
-        'Postman-Token': "9a64bcf4-effc-4117-9783-c3084a3ea4a7,2cb5fae9-7afd-43c0-b862-1d44f98e6493",
-        'Host': "bgp.he.net",
-        'cache-control': "no-cache"
+        "Connection": "keep-alive",
+        "Cache-Control": "max-age=0",
+        "DNT": "1",
+        "Upgrade-Insecure-Requests": "1",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-User": "?1",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3",
+        "Sec-Fetch-Site": "same-origin",
+        "Referer": "https://bgp.he.net/cc",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "zh-CN,zh;q=0.9",
+        "Cookie": "__utma=83743493.875054967.1571191220.1571191220.1571191220.1; __utmc=83743493; __utmz=83743493.1571191220.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); c=BAgiEzIxMC44My4yNDAuMTc4--35a94759c90411c56d1cb4d2ccc7635406aad645; _bgp_session=BAh7BjoPc2Vzc2lvbl9pZEkiJTQyMDc5NmEwMjEzMjYxMTgwYWFkY2IzZTY2N2Q3MWE2BjoGRUY%3D--a1439e2764d2221213a863c3951e693c6bc75b55,__utma=83743493.875054967.1571191220.1571191220.1571191220.1; __utmc=83743493; __utmz=83743493.1571191220.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); c=BAgiEzIxMC44My4yNDAuMTc4--35a94759c90411c56d1cb4d2ccc7635406aad645; _bgp_session=BAh7BjoPc2Vzc2lvbl9pZEkiJTQyMDc5NmEwMjEzMjYxMTgwYWFkY2IzZTY2N2Q3MWE2BjoGRUY%3D--a1439e2764d2221213a863c3951e693c6bc75b55; _bgp_session=BAh7BjoPc2Vzc2lvbl9pZEkiJTQyMDc5NmEwMjEzMjYxMTgwYWFkY2IzZTY2N2Q3MWE2BjoGRUY%3D--a1439e2764d2221213a863c3951e693c6bc75b55",
+        "If-None-Match": "d2a3cd416366cb5595c8c436a73af375",
+        "Postman-Token": "9a64bcf4-effc-4117-9783-c3084a3ea4a7,2cb5fae9-7afd-43c0-b862-1d44f98e6493",
+        "Host": "bgp.he.net",
+        "cache-control": "no-cache"
     }
 
     cloud_ip_dict = {}
@@ -88,40 +88,40 @@ def transform_cloud_ip(ip_str):
     :param ip_str: ip+掩码数
     :return:
     """
-    ip_and_mask = ip_str.split('/')
+    ip_and_mask = ip_str.split("/")
     mask = int(ip_and_mask[1])
-    ip_str_list = ip_and_mask[0].split('.')
+    ip_str_list = ip_and_mask[0].split(".")
 
     ip_list = []
 
     if mask < 8:
         ip_x_list = ip_bit_cala(int(ip_str_list[0]), 8 - mask)
         for ip_x in ip_x_list:
-            ip = str(ip_x) + ".*.*.*"
+            ip = "{0}.*.*.*".format(ip_x)
             ip_list.append(ip)
     elif mask == 8:
-        ip = ip_str_list[0] + '.*.*.*'
+        ip = "{0}.*.*.*".format(ip_str_list[0])
         ip_list.append(ip)
     elif mask < 16:
         ip_x_list = ip_bit_cala(int(ip_str_list[1]), 16 - mask)
         for ip_x in ip_x_list:
-            ip = ip_str_list[0] + '.' + str(ip_x) + ".*.*"
+            ip = "{0}.{1}.*.*".format(ip_str_list[0], ip_x)
             ip_list.append(ip)
     elif mask == 16:
-        ip = ip_str_list[0] + '.' + ip_str_list[1] + '.*.*'
+        ip = "{0}.{1}.*.*".format(ip_str_list[0], ip_str_list[1])
         ip_list.append(ip)
     elif mask < 24:
         ip_x_list = ip_bit_cala(int(ip_str_list[2]), 24 - mask)
         for ip_x in ip_x_list:
-            ip = ip_str_list[0] + '.' + ip_str_list[1] + '.' + str(ip_x) + ".*"
+            ip = "{0}.{1}.{2}.*".format(ip_str_list[0], ip_str_list[1], ip_x)
             ip_list.append(ip)
     elif mask == 24:
-        ip = ip_str_list[0] + '.' + ip_str_list[1] + '.' + ip_str_list[2] + '.*'
+        ip = "{0}.{1}.{2}.*".format(ip_str_list[0], ip_str_list[1], ip_str_list[2])
         ip_list.append(ip)
     else:
         ip_x_list = ip_bit_cala(int(ip_str_list[3]), 32 - mask)
         for ip_x in ip_x_list:
-            ip = ip_str_list[0] + '.' + ip_str_list[1] + '.' + ip_str_list[2] + '.' + str(ip_x)
+            ip = "{0}.{1}.{2}.{3}".format(ip_str_list[0], ip_str_list[1], ip_str_list[2], ip_x)
             ip_list.append(ip)
 
     return ip_list
